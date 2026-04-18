@@ -1,0 +1,37 @@
+model:
+  input_channels: 1
+  feature_dim: 128
+
+training:
+  batch_size: 32
+  lr: 0.0001
+  epochs: 30
+  weight_decay: 0.0001
+  uncertainty_weight: 0.01
+  num_workers: 4
+  val_split: 0.2
+  random_seed: 42
+
+audio:
+  sample_rate: 16000
+  duration: 3
+
+features:
+  type: mel_spectrogram
+  n_mels: 128
+  n_fft: 2048
+  hop_length: 512
+
+fuzzy:
+  num_memberships: 3
+  num_rules: 32
+  sigma_init: 0.5
+
+data:
+  test_split: 0.2
+  random_seed: 42
+  num_workers: 4
+
+paths:
+  checkpoint_dir: checkpoints
+  log_dir: logs
